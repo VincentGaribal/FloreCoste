@@ -259,7 +259,13 @@
 
 \newcommand{\itbo}[2]{%
 \item[#1]#2.
-\directlua{if type(botaniste) == "table" then botaniste["#1"]="#2" else botaniste = {}, botaniste["#1"]="#2" end}}
+\directlua{
+  if type(botaniste) == "table" then 
+    botaniste["#1"]="#2"
+  else 
+    botaniste = {}
+    botaniste["#1"]="#2"
+  end}}
 
 \newcommand{\itemcle}[2]{%
 \item \LigneCritereCle{#1}{#2}
