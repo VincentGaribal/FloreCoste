@@ -249,8 +249,9 @@
     botaniste["#1"]="#2"
   end}
 }
-
-\newcommand{\botaniste}[1]{\textcolor{\couleurBotaniste}{\pdftooltip{#1}{\directlua{tex.sprint(botaniste["#1"])}}}}
+\newcommand{\botaniste}[1]{%
+\textcolor{\couleurBotaniste}{\pdftooltip{#1}{\directlua{tex.sprint(botaniste["#1"])}}}
+}
 
 \newcommand{\itemcle}[2]{%
 \item \LigneCritereCle{#1}{#2}
