@@ -1,0 +1,25 @@
+% !TEX root = ../../flore.tex
+
+\famille{Araliaceae}
+
+\begin{descript}
+\appveg Arbrisseaux ou \glossaire{arbustes}{\Arbuste} non épineux ; feuilles simples, entières ou lobées, sans stipules.\inflo Fleurs jaunes ou blanches, en ombelles ou en corymbes.
+
+\fleur Fleurs régulières ; calice à tube soudé à l'ovaire, à 4--5 dents très courtes ; 4--5 pétales libres, caducs, alternes avec les dents du calice ; 4--5 étamines, insérées, avec les pétales, au sommet du tube calicinal, devant un disque épigyne ; 1 style, à stigmate simple ; ovaire infère.
+
+\fruit Fruit charnu (baie ou drupe), à noyau osseux, à 2--5 loges monospermes.
+\end{descript}
+
+% Clés des genres
+
+\section*{Clé des genres}
+
+\begin{cle}{araliaceae1}
+\itemcle{Arbrisseau sarmenteux, grimpant ; feuilles alternes persistantes ; fleurs à 5 sépales, 5 pétales, 5 étamines ; fruit bacciforme, à 2--5 noyaux distincts}{\nom{Hedera}{Hedera}}
+\itemcle{Arbrisseaux dressés, non grimpants ; feuilles opposées, caduques ; fleurs à 4 sépales, 4 pétales, 4 étamines ; fruit drupacé, à 1 seul noyau}{\nom{Cornus}{Cornus}}
+\end{cle}
+
+% Genres
+
+\input{Fiches/Araliaceae/Hedera/Hedera.genre}
+\input{Fiches/Araliaceae/Cornus/Cornus.genre}

@@ -1,0 +1,51 @@
+% !TEX root = ../../flore.tex
+
+\famille{Solanaceae}
+
+\begin{descript}
+\appveg Herbacées vivaces (\vernaculairelien{pomme de terre à tubercule de stolon}{}), annuelles (\vernaculairelien{tabac}{}) ou bisannuelles. Parfois arbuste (\vernaculairelien{Nicotiana glauca}{}) ou plante grimpante (\vernaculairelien{douce amère}{Solanumdulcamara}). Feuilles sans stipules de formes variées, le plus souvent alternes. Poils tecteurs ou glanduleux unicellulaires (odeur vireuse).
+
+\inflo Cymes souvent complexe. Parfois fleur solitaire.
+
+\fleur Régulière hermaphrodite.
+\calice 5S soudés.
+\corolle 5P soudés. Forme variable (rotacée chez \emph{Solanum}, campanulée chez \emph{Atropa}, en cône chez \emph{Nicotiana} et \emph{Datura}).
+\androcee 5E insérées sur le tube de la corolle : E tubuliflores. E alternipétales rassemblées autour du style avec des nectaires à leur base. Déhiscence poricide chez \emph{Solanum}. E parfois inégales (\emph{Nicotiana})
+\gynecee Ovaire supère à 2C soudés (2 loges) contenant chacun de nombreux ovules campylotropes ou anatropes. Placentation axile. Style unique. (parfois 4C : \emph{Datura}).
+\formuleflorale{(5S) + ((5P) + (5E)) + ($\underline{\text{2C}}$)}
+
+\fruit Baie (\emph{Solanum, Atropa, Pysalis}). Capsule septicide (\emph{Nicotiana, Datura}), pyxide (\emph{Hyoscyamus}). Calice parfois accrescent (Alkékenge).
+\end{descript}
+
+% Clés des genres
+
+\section*{Clé des genres}
+
+\begin{cle}{Solanaceae1}
+\itemcle{Corolle en roue ou en cloche, à tube court}{\nom{cleSolanaceae2}{}}
+\itemcle{Corolle tubuleuse ou en entonnoir, à tube long ou grêle}{\nom{}{}}
+\end{cle}
+
+\begin{cle}{Solanaceae2}
+\itemcle{Fleurs en grappes ou épis terminaux ; corolle un peu irrégulière, à lobes inégaux ; étamines inégales, à filets barbus, à anthères écartées et à 1 loge ; fruit capsulaire, s'ouvrant au sommet par 2 valves}{\nom{cleSolanaceae3}{}}
+\itemcle{Fleurs en cyme corymbiformes terminales, ou solitaires à l'aisselle des feuilles ; corolle régulière, à lobes égaux ; étamines égales, à filets glabres, à anthère rapprochées conniventes et à 2 loges ; fruit en baie indéhiscente}{\nom{cleSolanaceae4}{}}
+\end{cle}
+
+\begin{cle}{Solanaceae3}
+\itemcle{5 étamines, dont 3 courtes et 2 longues ; feuilles simplement crénelées, dentées ou sinuées-pennatifides ; plantes souvent cotonneuses}{\nom{Verbascum}{Verbascum}}
+\itemcle{4 étamines, dont 2 courtes et 2 longues ; feuilles inférieures lyrées-pennatifides ou bipennatisséquées ; plantes pubescentes ou glabres}{\nom{Celsia}{Celsia}}
+\end{cle}
+
+\begin{cle}{Solanaceae4}
+\itemcle{Fleurs en cymes corymbiformes terminales ou latérales extraaxillaires ; calice peu ou point accrescent, petit, non ombiliqué à la base ni veiné en réseau, à la fin bien plus court que le fruit ; anthères s'ouvrant au sommet par  trous}{\nom{Solanum}{Solanum}}
+\itemcle{Fleurs solitaires à l'aisselle des feuilles ; calice très accresccent, le fructifère très ample, tronqué ou ombiliqué à la base, veiné en réseau, à la fin enveloppant complètement le fruit ; anthèses s'ouvrant par 2 fentes longitudinales}{\nom{cleSolanaceae5}{}}
+\end{cle}
+
+\begin{cle}{Solanaceae5}
+\itemcle{Fleurs d'un blanc sale ; corolle en roue, à 5 lobes courts ; calice velu, le fructifère gonflé en vessie ovale, bob prolongée sur le pédoncule, à dents conniventes, à la fin d'un rouge orangé ; baie à 2 loges, rouge et succulente à la maturité}{\nom{Physalis}{Physalis}}
+\itemcle{Fleurs d'un bleu clair à fond blanchâtre ; corolle en cloche, obscurément lobée ; calice glabre, profondément divisé en 5 lobes ovales-mucronés, prolongés au-dessous de la base et comme sagittés, à la fin fauves ; baie à 3-5 loges, brune et presque sèche à la maturité}{\nom{Nicandra}{Nicandra}}
+\end{cle}
+
+% Genres
+
+\input{Fiches/Solanaceae/Solanum/Solanum.genre}

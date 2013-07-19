@@ -1,0 +1,118 @@
+% !TEX root = ../flore.tex
+
+% a4
+\ifpapieraquatre
+\usepackage[
+a4paper,
+margin=15mm,
+includefoot,
+headheight=18pt
+]{geometry}
+\fi
+
+% a5
+\ifpapieracinq
+\usepackage[
+a5paper,
+margin=10mm,
+includefoot,
+headheight=18pt
+]{geometry}
+\fi
+
+% a6
+\ifpapierasix
+\usepackage[
+a6paper,
+margin=5mm,
+includefoot,
+headheight=18pt,
+footskip=8mm
+]{geometry}
+\fi
+
+% a7
+\ifpapierasept
+\usepackage[
+paperwidth=74mm,
+paperheight=105mm,
+margin=2mm,
+includefoot,
+headheight=18pt,
+footskip=8mm
+]{geometry}
+\fi
+
+% Style xindy
+\usepackage{filecontents}
+\begin{filecontents*}{style.xdy}
+;;; xindy style file
+(markup-keyword-list :close "\dotfill")
+(markup-locclass-list)
+\end{filecontents*}
+
+% français
+\usepackage[frenchb]{babel}
+\usepackage[french]{translator}
+
+% fonte
+\usepackage{libertine}
+\usepackage[babel]{microtype}
+
+% graphiques
+\usepackage{graphicx}
+\graphicspath{{Images/}}
+\usepackage{subfig}
+\usepackage{calc}
+
+% couleurs
+\usepackage[svgnames]{xcolor}
+
+% index
+\usepackage[xindy]{imakeidx}
+
+% manipulation de chaînes
+\usepackage{xstring}
+
+% if then else
+\usepackage{xifthen}
+
+% compteurs
+\usepackage{fmtcount}
+
+% unités
+\usepackage{siunitx}
+\sisetup{detect-all,output-decimal-marker={,},list-final-separator={ et },range-phrase={ à },allow-number-unit-breaks,text-celsius = $^\circ\mkern-1mu$C,inter-unit-product={}\cdot{},per-mode=symbol,range-units=single}
+
+% pdftooltip
+\usepackage{pdfcomment}
+
+% en-tête pied-de-page
+\usepackage{fancyhdr}
+
+% colonnes
+\usepackage{multicol}
+
+% hyperliens
+\usepackage{hyperref}
+\usepackage{bookmark}
+\hypersetup{
+unicode=true,
+pdftitle={Flore descriptive et illustrée de la France},
+colorlinks=true
+}
+
+\ifpapierasix
+\sloppy
+\fi
+\ifpapierasept
+\sloppy
+\fi
+
+\renewcommand{\chapterheadstartvskip}{\vspace *{-\baselineskip}}
+\renewcommand{\partformat}{\partname~\thepart}
+
+\renewcommand{\sectionmark}[1]{\markright{\thesection ~ \ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter ~ \ #1}{}}
+
+\renewcommand{\chapterformat}{}

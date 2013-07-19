@@ -1,0 +1,91 @@
+% !TeX program = lualatex
+
+\ifpapieraquatre
+\documentclass[fontsize=11pt]{scrbook}
+\fi
+\ifpapieracinq
+\documentclass[fontsize=10pt]{scrbook}
+\fi
+\ifpapierasix
+\documentclass[fontsize=9pt]{scrbook}
+\fi
+\ifpapierasept
+\documentclass[fontsize=8pt]{scrbook}
+\fi
+
+\input{Packages/packages}
+\input{Macros/macros}
+
+%  Déclaration des index
+\ifpapieraquatre
+\makeindex[options=-M style.xdy,name=scientifique,title=Index des noms scientifiques,intoc,columns=3]
+\makeindex[options=-M style.xdy,name=vernaculaire,title=Index des noms vernaculaires,intoc,columns=3]
+\fi
+\ifpapieracinq
+\makeindex[options=-M style.xdy,name=scientifique,title=Index des noms scientifiques,intoc,columns=3]
+\makeindex[options=-M style.xdy,name=vernaculaire,title=Index des noms vernaculaires,intoc,columns=3]
+\fi
+\ifpapierasix
+\makeindex[options=-M style.xdy,name=scientifique,title=Index des noms scientifiques,intoc,columns=2]
+\makeindex[options=-M style.xdy,name=vernaculaire,title=Index des noms vernaculaires,intoc,columns=2]
+\fi
+\ifpapierasept
+\makeindex[options=-M style.xdy,name=scientifique,title=Index des noms scientifiques,intoc,columns=2]
+\makeindex[options=-M style.xdy,name=vernaculaire,title=Index des noms vernaculaires,intoc,columns=2]
+\fi
+
+%  Titre
+\title{Flore descriptive et illustrée de la France\thanks{Version électronique décrivant \numberstring{NombreTotalFamillesSauve}[f] familles, \numberstring{NombreTotalGenresSauve}[m] genres et \numberstring{NombreTotalEspecesSauve}[f] espèces au \today.}}
+\subtitle{de la Corse et des contrées limitrophes}
+\author{\normalsize{d'après la flore de l'abbé}\\ Hippolyte Jacques \textsc{Coste}\thanks{1858 -- 1924.}}
+\date{}
+
+\begin{document}
+
+\input{EspeceTableLua/EspeceTableLua}
+
+\frontmatter
+\pagestyle{fancy}
+\maketitle
+\tableofcontents
+
+% liste des botanistes avec leurs abréviations 
+\input{Botanistes/botanistes}
+
+% glossaire illustré
+\input{Glossaire/glossaire}
+
+% clés
+\input{Fiches/familles.cles}
+
+\mainmatter
+\pagestyle{fancy}
+
+\input{Fiches/Araliaceae/Araliaceae.famille}
+\input{Fiches/Solanaceae/Solanaceae.famille}
+
+% dernières figures
+\clearpage
+
+% ajout des compteur de la dernière famille
+\immediate\write\compteurfile{\string\newcounter{NombreGenres\nomfamille Sauve}}
+\immediate\write\compteurfile{\string\setcounter{NombreGenres\nomfamille Sauve}{\number\value{NombreGenres}}}
+\immediate\write\compteurfile{\string\newcounter{NombreEspeces\nomfamille Sauve}}
+\immediate\write\compteurfile{\string\setcounter{NombreEspeces\nomfamille Sauve}{\number\value{NombreEspecesFamille}}}
+\immediate\write\compteurfile{\string\newcounter{NombreEspeces\nomgenre Sauve}}
+\immediate\write\compteurfile{\string\setcounter{NombreEspeces\nomgenre Sauve}{\number\value{NombreEspecesGenre}}}
+\immediate\write\compteurfile{\string\newcounter{NombreTotalFamillesSauve}}
+\immediate\write\compteurfile{\string\setcounter{NombreTotalFamillesSauve}{\number\value{NombreTotalFamilles}}}
+\immediate\write\compteurfile{\string\newcounter{NombreTotalGenresSauve}}
+\immediate\write\compteurfile{\string\setcounter{NombreTotalGenresSauve}{\number\value{NombreTotalGenres}}}
+\immediate\write\compteurfile{\string\newcounter{NombreTotalEspecesSauve}}
+\immediate\write\compteurfile{\string\setcounter{NombreTotalEspecesSauve}{\number\value{NombreTotalEspeces}}}
+\immediate\closeout\compteurfile
+
+\backmatter
+
+%  Index
+\printindex[scientifique]
+\printindex[vernaculaire]
+
+\end{document}

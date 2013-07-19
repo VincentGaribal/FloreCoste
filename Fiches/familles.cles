@@ -1,0 +1,113 @@
+% !TEX root = ../flore.tex
+
+\chapter{Clé de détermination des familles}
+
+\begin{cle}{angiospermes}
+\item \LigneCritereCle{Herbacée à tige ramifiée, à feuille simple, sessile, engainante à nervures parallèles ; racines adventives fasciculées ; fleurs de type 3}{\nom{clemonocotyledones}{}}
+\item \LigneCritereCle{Herbacée ne présentant pas ces caractères ou plante ligneuse}{\nom{cleeudicotyledones}{}}
+\end{cle}
+
+\begin{cle}{monocotyledones}
+\item \LigneCritereCle{Fleurs discrètes}{\nom{clefleursdiscretes}{}}
+\item \LigneCritereCle{Fleurs colorées}{\nom{clefleurscolorees}{}}
+\end{cle}
+
+\begin{cle}{fleursdiscretes}
+\item \LigneCritereCle{Formule florale complète}{\nom{Joncaceae}{Joncaceae}}
+\item \LigneCritereCle{Formule florale simplifiée}{\nom{cleformulefloralesimplifie}{}}
+\end{cle}
+
+\begin{cle}{formulefloralesimplifie}
+\item \LigneCritereCle{Tige pleine, feuilles à gaine non fendue et insérées sur trois rangs}{\nom{Cyperaceae}{Cyperaceae}}
+\item \LigneCritereCle{Tige creuse, feuilles à gaine fendue et insérées sur trois rangs}{\nom{Poaceae}{Poaceae}}
+\end{cle}
+
+\begin{cle}{fleurscolorees}
+\item \LigneCritereCle{Formule florale complète, fleur actinomorphe, ovaire supère, placentation axile}{\nom{Liliaceae}{Liliaceae}}
+\item \LigneCritereCle{Formule florale simplifiée, fleur zygomorphe, ovaire infère, placentation pariétale}{\nom{Orchidaceae}{Orchidaceae}}
+\end{cle}
+
+\begin{cle}{eudicotyledones}
+\item \LigneCritereCle{Herbacées à fleurs à carpelles libres et pièces florales insérées en spirales}{\nom{Ranunculaceae}{Ranunculaceae}}
+\item \LigneCritereCle{Plantes ne présentant pas ces caractères}{\nom{clefleurspetaleslibres}{}}
+\end{cle}
+
+\begin{cle}{fleurspetaleslibres}
+\item \LigneCritereCle{Fleur à pétales libres}{\nom{clefleuractinomorphetype3}{}}
+\item \LigneCritereCle{Fleur à pétales soudés}{\nom{cleovaire}{}}
+\item \LigneCritereCle{Fleur sans pétales}{\nom{cleherbaceealatex}{}}
+\end{cle}
+
+\begin{cle}{fleuractinomorphetype3}
+\item \LigneCritereCle{Fleur actinomorphe de type 3, stipules engainantes (ochréa), akène trigone ou lenticulaire}{\nom{Polygonaceae}{Polygonaceae}}
+\item \LigneCritereCle{Fleur actinomorphe à 4 sépales, 4 pétales et 6 étamines, silique}{\nom{Brassicaceae}{Brassicaceae}}
+\item \LigneCritereCle{Fleur actinomorphe de type 5}{\nom{cleovairesupere}{}}
+\item \LigneCritereCle{Fleur zygomorphe de type 5, corolle papilionacée, gousse}{\nom{Fabaceae}{Fabaceae}}
+\end{cle}
+
+\begin{cle}{ovairesupere}
+\item \LigneCritereCle{Ovaire généralement supère}{\nom{cleherbacee}{}}
+\item \LigneCritereCle{Ovaire infère, ombelle, diakène, herbacée riche en canaux sécréteurs}{\nom{Apiaceae}{Apiaceae}}
+\end{cle}
+
+\begin{cle}{herbacee}
+\item \LigneCritereCle{Herbacée, fleur à 5-10 étamines}{\nom{clegraine}{}}
+\item \LigneCritereCle{Herbacée ou ligneux, fleur à nombreuses étamines}{\nom{clefeuillesalternes}{}}
+\end{cle}
+
+\begin{cle}{graine}
+\item \LigneCritereCle{Graine centrospermée}{\nom{cletige}{}}
+\item \LigneCritereCle{Graine non centrospermée, plante velue, feuilles découpées, capsule explosive}{\nom{Geraniaceae}{Geraniaceae}}
+\end{cle}
+
+\begin{cle}{tige}
+\item \LigneCritereCle{Tige renflée aux nœuds, feuille entière, cyme bipare}{\nom{Caryophyllaceae}{Caryophyllaceae}}
+\item \LigneCritereCle{Périanthe réduit à des tépales, cyme généralement contractée en glomérules}{\nom{Amaranthaceae}{Amaranthaceae}}
+\end{cle}
+
+\begin{cle}{feuillesalternes}
+\item \LigneCritereCle{Feuilles alternes, stipules}{\nom{Rosaceae}{Rosaceae}}
+\item \LigneCritereCle{Feuilles le plus souvent opposées et sans stipules, sépales inégaux, placentation pariétale}{\nom{Cistaceae}{Cistaceae}}
+\end{cle}
+
+\begin{cle}{ovaire}
+\item \LigneCritereCle{Ovaire supère}{\nom{clefleuractinomorphe}{}}
+\item \LigneCritereCle{Ovaire infère, capitule}{\nom{Asteraceae}{Asteraceae}}
+\end{cle}
+
+\begin{cle}{fleuractinomorphe}
+\item \LigneCritereCle{Fleur actinomorphe de type 5}{\nom{clecycleetamine}{}}
+\item \LigneCritereCle{Fleur zygomorphe de type 5}{\nom{cleovaireplusieursloges}{}}
+\end{cle}
+
+\begin{cle}{cycleetamine}
+\item \LigneCritereCle{Deux cycle d'étamines (parfois ovaire infère)}{\nom{Ericaceae}{Ericaceae}}
+\item \LigneCritereCle{Un seul cycle d'étamine}{\nom{cleovaireuneloge}{}}
+\end{cle}
+
+\begin{cle}{ovaireuneloge}
+\item \LigneCritereCle{Ovaire à 1 loge, placentation centrale}{\nom{Primulaceae}{Primulaceae}}
+\item \LigneCritereCle{Ovaire à 2 loges}{\nom{clenombreetamines}{}}
+\item \LigneCritereCle{Ovaire à 4 loges, plante velue}{\nom{Boraginaceae}{Boraginaceae}}
+\end{cle}
+
+\begin{cle}{ovaireplusieursloges}
+\item \LigneCritereCle{Ovaire à 2 loges, capsule}{\nom{Scrphulariaceae}{Scrophulariaceae}}
+\item \LigneCritereCle{Ovaire à 4 loges, tétrakène}{\nom{Lamiaceae}{Lamiaceae}}
+\end{cle}
+
+
+\begin{cle}{nombreetamines}
+\item \LigneCritereCle{2 étamines}{\nom{Oleaceae}{Oleaceae}}
+\item \LigneCritereCle{5 étamines}{\nom{Solanaceae}{Solanaceae}}
+\end{cle}
+
+\begin{cle}{herbaceealatex}
+\item \LigneCritereCle{Herbacée à latex, ovaire supère}{\nom{Euphorbiaceae}{Euphorbiaceae}}
+\item \LigneCritereCle{Plante ligneuse à fleurs en chatons}{\nom{cleplantedioique}{}}
+\end{cle}
+
+\begin{cle}{plantedioique}
+\item \LigneCritereCle{Plante dioïque, ovaire supère}{\nom{Salicaceae}{Salicaceae}}
+\item \LigneCritereCle{Plante monoïque, ovaire infère, cupule}{\nom{Fagaceae}{Fagaceae}}
+\end{cle}

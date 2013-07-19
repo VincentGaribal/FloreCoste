@@ -1,0 +1,30 @@
+% !TEX root = ../../../flore.tex
+
+\genre{Solanum}{L}{Morelle}
+
+\begin{descript}
+Calice peu ou pas accrescent, à 5 lobes étalés, à la fin appliqués sur le fruit ; corolle en roue, à tube court, à limbe plissé très ouvert, à 5 lobes ; 5 étamines, à anthères rapprochés en colonne, très saillantes, s'ouvrant au sommet par 2 pores ; style simple, stigmate obtus ; baie à 2 loges, globuleuse ou ovoïde.
+
+Fleurs blanches ou violettes, un cymes ombelliformes pédonculées latérales et terminales ; feuilles simples ou composées, pétiolées, à nervures pennées ; plantes herbacées ou ligneuses.
+
+Environ 900 espèces habitant les régions tempérées et chaudes de tout le globe. Elles ont une grande importance par la variété de leurs propriétés : tout à tout alimentaires, toxiques, émollientes et employées en médecine.
+\end{descript}
+
+\subsection*{Clé des espèces}
+
+\begin{cle}{SolanaceaeSolanum1}
+\itemcle{Plantes ligneuses ou vivaces, à feuilles simples ou pennées ; fleurs violettes, rarement blanches}{\nom{cleSolanaceaeSolanum2}{}}
+\itemcle{Plantes annuelles, à feuilles ovales plus ou moins sinuées-dentées ; fleurs blanches, petites (6--10 mm de diamètre)}{}
+\end{cle}
+
+\begin{cle}{SolanaceaeSolanum2}
+\itemcle{Plante très épineuse, ligneuse, couverte de poils étoilés ; feuilles sinnuées-pennatifides, à nervure portant sur les deux faces de forts aiguillons ; baies jaunes, grosses, globuleuses}{\nom{Solanumsodomaeum}{Solanum sodomæum}}
+\itemcle{Plantes jamais épineuses, glabres ou à poils simples, feuilles dépourvues d'aiguillons ; baies rouges ou verdâtres}{\nom{cleSolanaceaeSolanum3}{}}
+\end{cle}
+
+\begin{cle}{SolanaceaeSolanum3}
+\itemcle{Tige ligneuse, sarmenteuse, cylindrique, un peu voluble ; feuilles simples ou les supérieures triséquées ; corolles assez petites (\SIrange{12}{20}{\milli\meter} de diamètre), à lobes marqués vers la base de 2 taches vertes ; baies ovoïdes, rouges}{\nom{Solanumdulcamara}{\emph{Solanum dulcamara}}}
+\itemcle{}{}
+\end{cle}
+
+\input{Fiches/Solanaceae/Solanum/dulcamara/SolanumDulcamara.espece}

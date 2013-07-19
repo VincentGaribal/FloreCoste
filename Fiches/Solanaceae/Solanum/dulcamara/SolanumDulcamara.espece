@@ -1,0 +1,28 @@
+% !TEX root=../../../../flore.tex
+
+\espece{Solanum}{dulcamara}{L}
+\vernaculaire{Douce amère}{}
+
+\begin{descript}
+
+\biologie
+
+\appveg \glossaire{Arbuste}{\Arbuste} \glossaire{sarmenteux}{\Sarmenteux} de \SIrange{1}{2}{\meter}, \glossaire{glabre}{\Glabre} ou \glossaire{pubescent}{\Pubescent}, à écorce amère et à bois sucré, à rameaux \glossaire{herbacés}{\Herbace}, un peu \glossaire{volubile}{\Volubile}, cylindrique ; feuilles ovales-acuminées, souvent en cœur, entières ou les supérieures triséquées, les 2 segments latéraux plus petits ;
+
+\inflo Fleurs violettes, en cymes corymbiformes divariquées, multiflores, longuement pédonculées.
+
+\fleur \calice Vert, petit, à lobes courts ; \corolle \SIrange{12}{20}{\milli\meter}, à lobes réfléchis, marqués chacun vers la base de 2 taches vertes ; anthères jaunes.
+
+\fruit Baies ovoïdes, rouges.
+
+\end{descript}
+
+\begin{figure*}
+\subfloat[Vue générale]{\includegraphics[width=.49\linewidth]{test_icono}}
+\hfill
+\subfloat[Inflorescence]{\includegraphics[width=.49\linewidth]{test_icono}}
+
+\subfloat[Fleur]{\includegraphics[width=.49\linewidth]{test_icono}}
+\hfill
+\subfloat[Fruit]{\includegraphics[width=.49\linewidth]{test_icono}}
+\end{figure*}

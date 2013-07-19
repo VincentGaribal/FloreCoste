@@ -1,0 +1,15 @@
+% !TEX root = ../../../flore.tex
+
+\genre{Cornus}{L}{Cornouiller}
+
+Du latin \emph{cornu}, corne ; allusion au bois lourd, dur et compact comme de la corne.
+
+\subsection*{Clé des espèces}
+
+\begin{cle}{cornus}
+\itemcle{Fleurs jaunes, paraissant avant les feuilles, disposées en ombelles simples, munies d'un involucre à 4 folioles ; drupe elliptique, rouge à maturité}{\nom{Cornusmas}{\emph{Cornus mas}}}
+\itemcle{Fleurs blanches, paraissant après les feuilles, disposées en corymbes rameux, dépourvues d'involucre ; drupe globuleuse, noire à maturité}{\nom{Cornussanguinea}{\emph{Cornus sanguinea}}}
+\end{cle}
+
+\input{Fiches/Araliaceae/Cornus/mas/CornusMas.espece}
+\input{Fiches/Araliaceae/Cornus/sanguinea/CornusSanguinea.espece}
