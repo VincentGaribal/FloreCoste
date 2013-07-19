@@ -255,8 +255,17 @@
 %\StrSubstitute{\chaine}{ü}{u}[\chaine]
 %\expandafter\global\expandafter\def\csname abbrev\chaine\endcsname{#1}
 %\expandafter\global\expandafter\def\csname nomcomplet\chaine\endcsname{#2}
+%\directlua{
+%  if type(botaniste) == "table" then 
+%    botaniste["#1"]="#2"
+%  else 
+%    botaniste = {}
+%    botaniste["#1"]="#2"
+%  end
+%}
 %}
 
+% botanistes
 \newcommand{\itbo}[2]{%
 \item[#1]#2.
 \directlua{
@@ -265,7 +274,10 @@
   else 
     botaniste = {}
     botaniste["#1"]="#2"
-  end}}
+  end}
+}
+
+\newcommand{\botaniste}[1]{\textcolor{\couleurBotaniste}{\pdftooltip{#1}{\directlua{tex.sprint(botaniste["#1"])}}}}
 
 \newcommand{\itemcle}[2]{%
 \item \LigneCritereCle{#1}{#2}
@@ -304,10 +316,6 @@
 % #2 : note
 \newcommand{\glossaire}[2]{%
 \textcolor{\couleurTermeGlossaire}{\pdftooltip{#1}{#2}}}
-
-\newcommand{\botaniste}[1]{%
-\textcolor{\couleurBotaniste}{\pdftooltip{\csname abbrev#1\endcsname}{\csname nomcomplet#1\endcsname}}
-}
 
 % description espèce
 \newenvironment{descript}%
