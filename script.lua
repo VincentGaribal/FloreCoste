@@ -14,3 +14,20 @@ function definitionglossaire (Terme)
     tex.sprint(Glossaire[Terme])
   end
 end
+
+function botaniste(Abreviation,Nom)
+  if type(Botaniste) == "table" then
+    Botaniste[Abreviation] = Nom
+  else 
+    Botaniste = {}
+    Botaniste[Abreviation] = Nom
+  end
+end
+
+function nomcompletbotaniste (Abreviation)
+  if Botaniste[Abreviation] == nil then
+    tex.sprint("Erreur dans le nom du botaniste")
+  else
+    tex.sprint(Botaniste[Abreviation])
+  end
+end
