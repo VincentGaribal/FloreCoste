@@ -241,7 +241,7 @@
 % botanistes
 \newcommand{\itbo}[2]{%
 \item[#1]#2.
-\directlua{
+\luadirect{
   if type(botaniste) == "table" then 
     botaniste["#1"]="#2"
   else 
@@ -250,7 +250,7 @@
   end}
 }
 \newcommand{\botaniste}[1]{%
-\textcolor{\couleurBotaniste}{\pdftooltip{#1}{\directlua{tex.sprint(botaniste["#1"])}}}
+\textcolor{\couleurBotaniste}{\pdftooltip{#1}{\luadirect{tex.sprint(botaniste["#1"])}}}
 }
 
 \newcommand{\itemcle}[2]{%
@@ -277,19 +277,25 @@
 \setcounter{tocdepth}{1}
 
 % entrée dans le glossaire avec liens et creation macro
+%\newcommand{\entreeglossaire}[2]{%
+%\paragraph[#1]{#1 ;\label{#1}}
+%\StrDel{#1}{ }[\chaine]
+%\StrSubstitute{\chaine}{é}{e}[\chaine]
+%\expandafter\global\expandafter\def\csname \chaine\endcsname{#2}
+%#2
+%}
+
 \newcommand{\entreeglossaire}[2]{%
-\StrDel{#1}{ }[\chaine]
-\StrSubstitute{\chaine}{é}{e}[\chaine]
-\paragraph[#1]{#1 ;\label{#1}}
-\expandafter\global\expandafter\def\csname \chaine\endcsname{#2}
-#2
-}
+\paragraph[#1]{#1 ;}#2%
+\luadirect{glossaire("#1",\luastringN{#2})}}
 
 % pdftooltip
 % #1 : texte
 % #2 : note
+%\newcommand{\glossaire}[2]{%
+%\textcolor{\couleurTermeGlossaire}{\pdftooltip{#1}{#2}}}
 \newcommand{\glossaire}[2]{%
-\textcolor{\couleurTermeGlossaire}{\pdftooltip{#1}{#2}}}
+\textcolor{\couleurTermeGlossaire}{\pdftooltip{#1}{\luadirect{definitionglossaire(\luastringN{#2})}}}}
 
 % description espèce
 \newenvironment{descript}%
