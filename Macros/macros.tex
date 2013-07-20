@@ -238,20 +238,16 @@
 {\mbox{\textbf{\hyperref[#1]{#2}}}}%
 }
 
-% botanistes
-\newcommand{\itbo}[2]{%
-\item[#1]#2.
-\luadirect{
-  if type(botaniste) == "table" then 
-    botaniste["#1"]="#2"
-  else 
-    botaniste = {}
-    botaniste["#1"]="#2"
-  end}
-}
+% entrée des noms des botanistes
+% #1 : nom abrégé
+% #2 : nom complet
+\newcommand{\entreebotaniste}[2]{%
+\item[#1]#2.%
+\luadirect{botaniste(\luastringN{#1},\luastringN{#2})}}
+
+% affichage du nom complet du botaniste dans une bulle
 \newcommand{\botaniste}[1]{%
-\textcolor{\couleurBotaniste}{\pdftooltip{#1}{\luadirect{tex.sprint(botaniste["#1"])}}}
-}
+\textcolor{\couleurBotaniste}{\pdftooltip{#1}{\luadirect{nomcompletbotaniste(\luastringN{#1})}}}}
 
 \newcommand{\itemcle}[2]{%
 \item \LigneCritereCle{#1}{#2}
