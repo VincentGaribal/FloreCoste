@@ -7,9 +7,7 @@ Flore = {
       helix = {
         botaniste = "Linné",
         vernaculaire = {
-          [1] = {
-            ["Lierre"] = "grimpant"
-          }
+          [1] = {["Lierre"] = "grimpant"}
         }
       }
     },
@@ -19,18 +17,14 @@ Flore = {
       mas = {
         botaniste = "Linné",
         vernaculaire = {
-          [1] = {
-            ["Cornouiller"] = "mâle"
-          }
+          [1] = {["Cornouiller"] = "mâle"}
         }
       },
       -- sanguinea
       sanguinea = {
         botaniste = "Linné",
         vernaculaire = {
-          [1] = {
-            ["Cornouiller"] = "sanguin"
-          }
+          [1] = {["Cornouiller"] = "sanguin"}
         }
       }
     }
@@ -45,7 +39,16 @@ Flore = {
         vernaculaire = {
         -- synonymes
           [1] = "Douce amère",
-          [2] = "Morelle douce amère"
+          [2] = {["Morelle"] = "douce amère"},
+          [3] = {["Vigne"] = "de Judée"},
+          [4] = "Crève-chien",
+          [5] = "Loque",
+          [6] = {["Herbe"] = "à la quarte"},
+          [7] = {["Herbe"] = "à la fièvre"},
+          [8] = "Réglisse sauvage",
+          [9] = {["Morelle"] = "grimpante"},
+          [10] = "Bronde",
+          [11] = "Bois de ru"
         }
       }
     }
