@@ -51,14 +51,14 @@ function vernaculaire (Famille, Genre, Espece)
       while compteur <= nombreentreetable(Flore[Famille][Genre][Espece]["vernaculaire"]) do
         if type(Flore[Famille][Genre][Espece]["vernaculaire"][compteur]) == "table" then
           for cle,valeur in pairs(Flore[Famille][Genre][Espece]["vernaculaire"][compteur]) do
-            if compteur == 1 then
+            if chaine == "" then
               chaine = [[\textbf{\Large{]] .. cle ..  [[ ]] .. valeur .. [[}}\index[vernaculaire]{]] .. cle .. [[!]] .. valeur .. [[}]]
             else
-              chaine = cle .. " " .. valeur
+              chaine = chaine .. [[, ]] .. cle .. [[ ]] .. valeur .. [[\index[vernaculaire]{]] .. cle .. [[!]] .. valeur .. [[}]]
             end
           end
         else
-          if compteur == 1 then
+          if chaine == "" then
             chaine = [[\textbf{\Large{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}}\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}]]
           else
             chaine = chaine .. ", " .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}]]
