@@ -48,20 +48,23 @@ function vernaculaire (Famille, Genre, Espece)
   else -- il existe un ou plusieurs noms
     if type(Flore[Famille][Genre][Espece]["vernaculaire"]) == "table" then
       local compteur = 1
+      local NonPrincipalIndex = ""
       while compteur <= nombreentreetable(Flore[Famille][Genre][Espece]["vernaculaire"]) do
         if type(Flore[Famille][Genre][Espece]["vernaculaire"][compteur]) == "table" then
           for cle,valeur in pairs(Flore[Famille][Genre][Espece]["vernaculaire"][compteur]) do
             if chaine == "" then
               chaine = [[\textbf{\Large{]] .. cle ..  [[ ]] .. valeur .. [[}}\index[vernaculaire]{]] .. cle .. [[!]] .. valeur .. [[}]]
+              NomPrincipalIndex = cle .. " " .. valeur
             else
-              chaine = chaine .. [[, ]] .. cle .. [[ ]] .. valeur .. [[\index[vernaculaire]{]] .. cle .. [[!]] .. valeur .. [[}]]
+              chaine = chaine .. [[, ]] .. cle .. [[ ]] .. valeur .. [[\index[vernaculaire]{]] .. cle .. [[!]] .. valeur .. [[|see{]] .. NomPrincipalIndex .. [[}}]]
             end
           end
         else
           if chaine == "" then
             chaine = [[\textbf{\Large{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}}\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}]]
+            NomPrincipalIndex = Flore[Famille][Genre][Espece]["vernaculaire"][compteur]
           else
-            chaine = chaine .. ", " .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}]]
+            chaine = chaine .. ", " .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[|see{]] .. NomPrincipalIndex .. [[}}]]
           end
         end
         compteur = compteur + 1
