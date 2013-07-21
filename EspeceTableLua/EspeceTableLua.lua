@@ -28,8 +28,8 @@ flore = {
         botaniste = "Linné",
         vernaculaire = {
         -- synonymes
-          1 = "douce amère",
-          2 = "morelle douce amère"
+          "douce amère",
+          "morelle douce amère"
         }
       }
     }
