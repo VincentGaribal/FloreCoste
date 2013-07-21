@@ -1,3 +1,11 @@
+function nombreentreetable (table)
+  local count = 0
+  for k in pairs(table) do
+    count = count + 1
+  end
+  return count
+end
+
 function glossaire(Terme, Definition)
   if type(Glossaire) == "table" then
     Glossaire[Terme] = Definition
@@ -29,5 +37,38 @@ function nomcompletbotaniste (Abreviation)
     tex.sprint("Erreur dans le nom du botaniste")
   else
     tex.sprint(Botaniste[Abreviation])
+  end
+end
+
+function vernaculaire (Famille, Genre, Espece)
+  local chaine = ""
+  -- contrôle de l'existence de la table
+  if type(Flore[Famille][Genre][Espece]["vernaculaire"]) == nil then
+    chaine = "Il n'y a aucun nom vernaculaire associé"
+  else -- il existe un ou plusieurs noms
+    if type(Flore[Famille][Genre][Espece]["vernaculaire"]) == "table" then
+      local compteur = 1
+      while compteur <= nombreentreetable(Flore[Famille][Genre][Espece]["vernaculaire"]) do
+        if type(Flore[Famille][Genre][Espece]["vernaculaire"][compteur]) == "table" then
+          for cle,valeur in pairs(Flore[Famille][Genre][Espece]["vernaculaire"][compteur]) do
+            if compteur == 1 then
+              chaine = [[\textbf{\Large{]] .. cle ..  [[ ]] .. valeur .. [[}}\index[vernaculaire]{]] .. cle .. [[!]] .. valeur .. [[}]]
+            else
+              chaine = cle .. " " .. valeur
+            end
+          end
+        else
+          if compteur == 1 then
+            chaine = [[\textbf{\Large{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}}\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}]]
+          else
+            chaine = chaine .. ", " .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"][compteur] .. [[}]]
+          end
+        end
+        compteur = compteur + 1
+      end
+    else
+      chaine = [[\textbf{\Large{]] .. Flore[Famille][Genre][Espece]["vernaculaire"] .. [[}}\index[vernaculaire]{]] .. Flore[Famille][Genre][Espece]["vernaculaire"] .. [[}]]
+    end
+    tex.sprint([[\textsf{]] .. chaine .. [[}]])
   end
 end
