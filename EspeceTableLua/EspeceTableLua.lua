@@ -1,35 +1,51 @@
 -- flore
-flore = {
+Flore = {
   -- araliaceae
-  araliaceae = {
+  Araliaceae = {
     -- hedera
-    hedera = {
+    Hedera = {
+      helix = {
+        botaniste = "Linné",
+        vernaculaire = {
+          [1] = {
+            ["Lierre"] = "grimpant"
+          }
+        }
+      }
     },
     -- cornus
-    cornus = {
+    Cornus = {
       -- mas
       mas = {
         botaniste = "Linné",
-        vernaculaire = "cornouiller mâle"
+        vernaculaire = {
+          [1] = {
+            ["Cornouiller"] = "mâle"
+          }
+        }
       },
       -- sanguinea
       sanguinea = {
         botaniste = "Linné",
-        vernaculaire = "cornouiller sanguin"
-      },
-    },
+        vernaculaire = {
+          [1] = {
+            ["Cornouiller"] = "sanguin"
+          }
+        }
+      }
+    }
   },
   -- début de la sous-table "solanaceae" (famille)
-  solanaceae = {
+  Solanaceae = {
     -- début de la sous-table "solanum" (genre)
-    solanum = {
+    Solanum = {
       -- début de la sous-table "dulcamara" (espece)
       dulcamara = {
         botaniste = "Linné",
         vernaculaire = {
         -- synonymes
-          "douce amère",
-          "morelle douce amère"
+          [1] = "Douce amère",
+          [2] = "Morelle douce amère"
         }
       }
     }
