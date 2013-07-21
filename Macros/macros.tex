@@ -109,7 +109,7 @@
 \refstepcounter{coupletdetermination}%
 \end{center}%
 }
-
+%\noindent\textsf{\large\textbf{#1 #2}\label{#1#2} \botaniste{#3}%
 % Espèce
 % #1 : genre
 % #2 : espèce
@@ -122,7 +122,7 @@
 \refstepcounter{NombreEspecesFamille}
 \index[scientifique]{#1!#2@\emph{#2}}%
 \bigskip%
-\noindent\textsf{\large\textbf{#1 #2\label{#1#2} \botaniste{#3}}%
+\noindent{\sffamily{\Large{\bfseries\itshape#1 #2}~{\botaniste{#3}}}
 \phantomsection%
 \addcontentsline{toc}{subsection}{#1 #2}%
 } \\\rule[1ex]{\linewidth}{.4pt}\normalsize\normalfont}%
