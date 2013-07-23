@@ -40,6 +40,27 @@ function nomcompletbotaniste (Abreviation)
   end
 end
 
+function round(num, idp)
+  local mult = 10^(idp or 0)
+  return math.floor(num * mult + 0.5) / mult
+end
+
+function barre (LargeurBarrePt, NombreDivisions, MinValeur, MaxValeur)
+  local LargeurBarre = string.gsub(LargeurBarrePt, "pt", "")
+  local Largeur = tonumber(LargeurBarre)
+  local Diviseur = tonumber(NombreDivisions)
+  local Minimum = tonumber(MinValeur)
+  local Maximum = tonumber(MaxValeur)
+  local LongueurUniteArrondie = round((Largeur / (Diviseur - 1)),2)
+  local LongueurUniteArrondiePt = LongueurUniteArrondie .. "pt"
+  tex.print([[\noindent
+\begin{tikzpicture}[x=]]..LongueurUniteArrondiePt..[[]
+\draw (1,0) -- (]].. Diviseur .. [[*]] .. LongueurUniteArrondiePt ..[[,0);
+\foreach \x in {1,...,]]..Diviseur..[[} {\draw (\x,0) -- (\x,-.2cm) node[anchor=north] {\x};}
+\draw[anchor=base,ultra thick] (]]..MinValeur..[[,0) -- (]]..MaxValeur..[[,0);
+\end{tikzpicture}]])
+end 
+
 function vernaculaire (Famille, Genre, Espece)
   local chaine = ""
   -- contrôle de l'existence de la table
