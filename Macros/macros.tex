@@ -317,4 +317,16 @@
 }
 
 % écologie
-\newcommand{\barre}[4]{\luadirect{barre(\luastring{\the#1},\luastring{#2},\luastring{#3},\luastring{#4})}}
+\newcommand{\lumiere}{%
+\newcount\moncompteurlargeur
+\newcount\moncompteurfonte
+\newlength\taillefonte
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{lumiere(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur})}}
