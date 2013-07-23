@@ -50,10 +50,46 @@ Flore = {
           [10] = "Bronde",
           [11] = "Bois de ru"
         },
-        ecologie = {
-          Lumiere = {
-            min = 6,
-            max = 8
+        ["Écologie"] = {
+          ["Lumière"] = {
+            ["Min"] = 6,
+            ["Max"] = 8
+          },
+          ["Humidité atmosphérique"] = {
+            ["Min"] = 4,
+            ["Max"] = 9
+          },
+          ["Température"] = {
+            ["Min"] = 4,
+            ["Max"] = 6
+          },
+          ["Continentalité"] = {
+            ["Min"] = 1,
+            ["Max"] = 6
+          },
+          ["pH"] = {
+            ["Min"] = 6,
+            ["Max"] = 8
+          },
+          ["Humidité"] = {
+            ["Min"] = 6,
+            ["Max"] = 8
+          },
+          ["Texture"] = {
+            ["Min"] = 1,
+            ["Max"] = 6
+          },
+          ["Nutriments"] = {
+            ["Min"] = 7,
+            ["Max"] = 7
+          },
+          ["Salinité"] = {
+            ["Min"] = 1,
+            ["Max"] = 1
+          },
+          ["Matière organique"] = {
+            ["Min"] = 1,
+            ["Max"] = 8
           }
         }
       }
