@@ -317,16 +317,135 @@
 }
 
 % écologie
-\newcommand{\lumiere}{%
+
+\newcommand{\facteur}[2]{%
+\noindent
+\begin{center}
+\csname #2\endcsname\\
+\textsf{\small\emph{#1}}
+\end{center}}
+
+% compteur et longueur
 \newcount\moncompteurlargeur
 \newcount\moncompteurfonte
 \newlength\taillefonte
+
+\newcommand{\lumiere}{%
 \setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
 \moncompteurfonte=\taillefonte\relax
 \moncompteurlargeur=\columnwidth\relax
-\luadirect{lumiere(
+\luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
 \luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur})}}
+\luastring{\the\moncompteurlargeur},
+"Lumière")}}
+
+\newcommand{\humiditeatmospherique}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Humidité atmosphérique")}}
+
+\newcommand{\temperature}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Température")}}
+
+\newcommand{\continentalite}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Continentalité")}}
+
+\newcommand{\pH}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"pH")}}
+
+\newcommand{\humidite}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Humidité")}}
+
+\newcommand{\texture}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Texture")}}
+
+\newcommand{\nutriments}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Nutriments")}}
+
+\newcommand{\salinite}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Salinité")}}
+
+\newcommand{\matiereorganique}{%
+\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
+\moncompteurfonte=\taillefonte\relax
+\moncompteurlargeur=\columnwidth\relax
+\luadirect{barre(
+\luastring{\nomfamille},
+\luastring{\nomgenre},
+\luastring{\nomespece},
+\luastring{\the\moncompteurfonte},
+\luastring{\the\moncompteurlargeur},
+"Matière organique")}}
