@@ -49,6 +49,12 @@ Flore = {
           [9] = {["Morelle"] = "grimpante"},
           [10] = "Bronde",
           [11] = "Bois de ru"
+        },
+        ecologie = {
+          Lumiere = {
+            min = 6,
+            max = 8
+          }
         }
       }
     }
