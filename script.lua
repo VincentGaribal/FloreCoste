@@ -1,3 +1,17 @@
+FacteursEcologiques = {
+  ["Lumiere"] = {
+    [1] = "hypersciaphiles",
+    [2] = "sciaphiles",
+    [3] = "intermédiaires",
+    [4] = "hémisciaphiles",
+    [5] = "intermédiaires",
+    [6] = "hémihéliophiles",
+    [7] = "intermédiaires",
+    [8] = "héliophiles",
+    [9] = "hyperhéliophiles"
+  }
+}
+
 function nombreentreetable (table)
   local count = 0
   for k in pairs(table) do
@@ -45,21 +59,38 @@ function round(num, idp)
   return math.floor(num * mult + 0.5) / mult
 end
 
-function barre (LargeurBarrePt, NombreDivisions, MinValeur, MaxValeur)
-  local LargeurBarre = string.gsub(LargeurBarrePt, "pt", "")
-  local Largeur = tonumber(LargeurBarre)
-  local Diviseur = tonumber(NombreDivisions)
-  local Minimum = tonumber(MinValeur)
-  local Maximum = tonumber(MaxValeur)
-  local LongueurUniteArrondie = round((Largeur / (Diviseur - 1)),2)
-  local LongueurUniteArrondiePt = LongueurUniteArrondie .. "pt"
-  tex.print([[\noindent
-\begin{tikzpicture}[x=]]..LongueurUniteArrondiePt..[[]
-\draw (1,0) -- (]].. Diviseur .. [[*]] .. LongueurUniteArrondiePt ..[[,0);
-\foreach \x in {1,...,]]..Diviseur..[[} {\draw (\x,0) -- (\x,-.2cm) node[anchor=north] {\x};}
-\draw[anchor=base,ultra thick] (]]..MinValeur..[[,0) -- (]]..MaxValeur..[[,0);
-\end{tikzpicture}]])
-end 
+function barre (Famille, Genre, Espece, LargeurFonteSP, LargeurTexteSP, Facteur, MinRange, MaxRange)
+  local NombreEntreesTable = nombreentreetable(FacteursEcologiques[Facteur])
+  local Minimum = Flore[Famille][Genre][Espece]["ecologie"][Facteur]["min"]
+  local Maximum = Flore[Famille][Genre][Espece]["ecologie"][Facteur]["max"]
+  local UniteSP = math.floor((LargeurTexteSP - LargeurFonteSP) / NombreEntreesTable)
+  local chaine = {}
+  table.insert(chaine,[[\noindent]])
+  table.insert(chaine,[[\begin{tikzpicture}[x=]]..UniteSP.."sp]")
+  table.insert(chaine,[[\draw (1,0) -- (]]..NombreEntreesTable..[[*]]..UniteSP..[[sp,0);]])
+  table.insert(chaine,[[\foreach \x/\nom in {]])
+  for i=1,NombreEntreesTable do
+    table.insert(chaine,i..[[/]]..FacteursEcologiques[Facteur][i]..",")
+  end
+  table.insert(chaine,[[} {\draw (\x,0) -- (\x,-.2cm) node[anchor=north] {\pdftooltip{\x}{\nom}};}]])
+  if Minimum == Maximum then
+    table.insert(chaine,[[\filldraw[anchor=base] (]]..Minimum..[[,O) circle (.1cm);]])
+  else
+    table.insert(chaine,[[\draw[anchor=base,ultra thick] (]]..Minimum..[[,0) -- (]]..Maximum..[[,0);]])
+  end
+  table.insert(chaine,[[\node[anchor=base west,inner sep=0sp] at (1,.2cm) {]]..MinRange..[[};]])
+  table.insert(chaine,[[\node[anchor=base east,inner sep=0sp] at (]]..NombreEntreesTable..[[,.2cm) {]]..MaxRange..[[};]])
+  table.insert(chaine,[[\end{tikzpicture}]])
+  tex.tprint(chaine)
+end
+
+function lumiere (Famille, Genre, Espece, LargeurFonteSP, LargeurTexteSP)
+  local Minimum = "ombre"
+  local Maximum = "lumière"
+  tex.print([[{\centering]])
+  barre (Famille, Genre, Espece, LargeurFonteSP, LargeurTexteSP, "Lumiere", Minimum, Maximum)
+  tex.print("}")
+end
 
 function vernaculaire (Famille, Genre, Espece)
   local chaine = ""
