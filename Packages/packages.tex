@@ -56,7 +56,28 @@ footskip=8mm
 \usepackage[french]{translator}
 
 % fonte
-\usepackage{libertine}
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\setmainfont[%
+BoldFont={Kepler Std Bold},%
+ItalicFont={Kepler Std Light Italic},%
+BoldItalicFont={Kepler Std Bold Italic},%
+%UprightFeatures={SmallCapsFont={Optima nova LT Medium Small Caps}},%
+%BoldFeatures={SmallCapsFont={Optima nova LT Bold Small Caps}},%
+%ItalicFeatures={SmallCapsFont={Optima nova LT Medium Italic Small Caps}},%
+%BoldItalicFeatures={SmallCapsFont={Optima nova LT Bold Italic Small Caps}}%
+]{Kepler Std Light}
+\setsansfont[%
+Scale=.94,
+BoldFont={Optima nova LT Bold},%
+ItalicFont={Optima nova LT Medium Italic},%
+BoldItalicFont={Optima nova LT Bold Italic},%
+UprightFeatures={SmallCapsFont={Optima nova LT Medium Small Caps}},%
+BoldFeatures={SmallCapsFont={Optima nova LT Bold Small Caps}},%
+ItalicFeatures={SmallCapsFont={Optima nova LT Medium Italic Small Caps}},%
+BoldItalicFeatures={SmallCapsFont={Optima nova LT Bold Italic Small Caps}}%
+]{Optima nova LT Medium}
+%\usepackage{libertine}
 \usepackage[babel]{microtype}
 
 % code lua
