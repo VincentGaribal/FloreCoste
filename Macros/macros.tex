@@ -71,7 +71,8 @@
 \renewcommand{\nomfamille}{#1}%
 % Incrémente le compteur de famille (donc remet à 0 les compteurs liés)
 \refstepcounter{NombreTotalFamilles}%
-\chapter[#1]{Famille des #1\label{#1}}%
+\addpart[#1]{Famille des #1\label{#1}}%
+\markboth{\nomfamille}{}
 \begin{center}
 \textit{Cette famille comporte \GenreSP{NombreGenres\nomfamille Sauve} et \EspeceSP{NombreEspeces\nomfamille Sauve}.}
 \end{center}
@@ -92,22 +93,13 @@
 \immediate\write\compteurfile{\string\setcounter{NombreEspeces\nomgenre Sauve}{\number\value{NombreEspecesGenre}}}}
 \refstepcounter{NombreGenres}
 \renewcommand{\nomgenre}{#1}%
-\medskip%
-\begin{center}%
-\textsf{\textbf{\Large Genre #1\index[scientifique]{#1}\ \botaniste{#2} \label{#1}%
-\phantomsection%
-\addcontentsline{toc}{section}{#1}%
-\ifthenelse%
-{\isempty{#3}}%
-{}%
-{\normalfont\ --- \emph{#3}\index[vernaculaire]{#3}}%
-}}%
-\markright{#1}%
+\markright{\nomgenre}% page courante
+\addchap[#1]{Genre #1\index[scientifique]{#1}\ \botaniste{#2} \label{#1}\normalfont\ --- \emph{#3}\index[vernaculaire]{#3}}
 \begin{center}
 \emph{Ce genre comporte \EspeceSP{NombreEspeces\nomgenre Sauve}.}
 \end{center}
 \refstepcounter{coupletdetermination}%
-\end{center}%
+%\end{center}%
 }
 
 % Espèce
@@ -120,36 +112,15 @@
 \refstepcounter{NombreTotalEspeces}%
 \refstepcounter{NombreEspecesGenre}
 \refstepcounter{NombreEspecesFamille}
-\index[scientifique]{#1!#2@\emph{#2}}%
-\bigskip%
-\noindent{\sffamily{\Large{\bfseries\itshape#1 #2}~{\botaniste{#3}}}
-\phantomsection%
-\addcontentsline{toc}{subsection}{#1 #2}%
-} \\\rule[1ex]{\linewidth}{.4pt}\normalsize\normalfont}%
+\addsec[#1 #2]{#1 #2~\botaniste{#3}\index[scientifique]{#1!#2@\emph{#2}}\label{#1#2}}\noindent\rule[2ex]{\linewidth}{.4pt}\normalsize\normalfont}
+%\phantomsection%
+%\addcontentsline{toc}{subsection}{#1 #2}%
+%} \\\rule[1ex]{\linewidth}{.4pt}\normalsize\normalfont}%
+
 
 % nom vernaculaire
 \newcommand{\vernaculaire}[3]{\luadirect{vernaculaire(\luastring{#1},\luastring{#2},\luastring{#3})}}
 \newcommand{\vernaculairelien}[2]{\hyperref[#2]{\color{\couleurExempleGlossaire}\emph{#1}}}
-
-
-% style
-\pagestyle{fancy}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhf{}%
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-\fancyfoot[RO,LE]{\iffloatpage{}{\small\sffamily\thepage}}
-\fancyfoot[RE,LO]{\iffloatpage{}{\small%
-\ifthenelse{\equal{\rightmark}{}}%
-{\nouppercase{\sffamily\leftmark}}%
-{\ifthenelse{\equal{\leftmark}{\rightmark}}%
-{\nouppercase{\sffamily\leftmark}}%
-{\nouppercase{\sffamily\hyperref[\nomfamille]{\leftmark}\ --- \hyperref[\nomgenre]{\rightmark}}}}}}
-
-
-\fancypagestyle{plain}{%
-\fancyhf{}
-\fancyfoot[C]{\small\sffamily\thepage}
-}
 
 \renewcommand{\floatpagefraction}{0.35}
 \setcounter{totalnumber}{5}
@@ -232,10 +203,9 @@
 {\end{list}\medskip}
 
 \newcommand{\nom}[2]{%
-\ifthenelse%
-{\equal{#2}{\empty}}%
-{\textbf{\ref{#1}}}%
-{\mbox{\textbf{\hyperref[#1]{#2}}}}%
+\ifthenelse{\isempty{#2}}%
+  {\textbf{\ref{#1}}}%
+  {\mbox{\textbf{\hyperref[#1]{#2}}}}%
 }
 
 \newcommand{\itemcle}[2]{%
