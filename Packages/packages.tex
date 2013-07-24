@@ -1,47 +1,71 @@
 % !TEX root = ../flore.tex
 
+\KOMAoptions{DIV=15,BCOR=0pt,twoside=false}
+
 % a4
 \ifpapieraquatre
-\usepackage[
-a4paper,
-margin=15mm,
-includefoot,
-headheight=18pt
-]{geometry}
+\KOMAoptions{%
+paper=a4,%
+DIV=15,%
+BCOR=0pt,%
+twoside=false,%
+numbers=noendperiod%
+}
 \fi
 
 % a5
 \ifpapieracinq
-\usepackage[
-a5paper,
-margin=10mm,
-includefoot,
-headheight=18pt
-]{geometry}
+\KOMAoptions{%
+paper=a5,%
+DIV=20,%
+BCOR=0pt,%
+twoside=false%
+}
 \fi
 
 % a6
 \ifpapierasix
-\usepackage[
-a6paper,
-margin=5mm,
-includefoot,
-headheight=18pt,
-footskip=8mm
-]{geometry}
+\KOMAoptions{%
+paper=a6,%
+DIV=25,%
+BCOR=0pt,%
+twoside=false%
+}
 \fi
 
 % a7
 \ifpapierasept
-\usepackage[
-paperwidth=74mm,
-paperheight=105mm,
-margin=2mm,
-includefoot,
-headheight=18pt,
-footskip=8mm
-]{geometry}
+\KOMAoptions{%
+paper=a7,%
+DIV=30,%
+BCOR=0pt,%
+twoside=false%
+}
 \fi
+\recalctypearea
+
+% en-tête pied-de-page
+\usepackage[manualmark]{scrpage2}
+\setkomafont{pagefoot}{\normalfont\rmfamily\sffamily}
+\setkomafont{pagenumber}{\normalfont\rmfamily\sffamily}
+\rofoot{\small\sffamily\pagemark}
+\refoot{\small\sffamily\pagemark}
+\cfoot{}
+\chead{}
+
+\lofoot{\small%
+\ifthenelse{\equal{\rightmark}{}}%
+  {\leftmark}%
+  {\ifthenelse{\equal{\leftmark}{\rightmark}}%
+    {\leftmark}%
+    {\hyperref[\nomfamille]{\leftmark}\ --- \hyperref[\nomgenre]{\rightmark}}}}
+
+\lefoot{\small%
+\ifthenelse{\equal{\rightmark}{}}%
+  {\leftmark}%
+  {\ifthenelse{\equal{\leftmark}{\rightmark}}%
+    {\leftmark}%
+    {\hyperref[\nomfamille]{\leftmark}\ --- \hyperref[\nomgenre]{\rightmark}}}}
 
 % Style xindy
 \usepackage{filecontents}
@@ -111,9 +135,6 @@ BoldItalicFeatures={SmallCapsFont={Optima nova LT Bold Italic Small Caps}}%
 % légendes figures
 \usepackage{caption}
 
-% en-tête pied-de-page
-\usepackage{fancyhdr}
-
 % colonnes
 \usepackage{multicol}
 
@@ -137,9 +158,4 @@ colorlinks=true
 \fi
 
 \renewcommand{\chapterheadstartvskip}{\vspace *{-\baselineskip}}
-\renewcommand{\partformat}{\partname~\thepart}
-
-\renewcommand{\sectionmark}[1]{\markright{\thesection ~ \ #1}}
-\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter ~ \ #1}{}}
-
-\renewcommand{\chapterformat}{}
+%\renewcommand{\partformat}{\partname~\thepart}
