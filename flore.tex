@@ -47,7 +47,6 @@
 \luadirect{dofile("/home/vincent/Flore/flore_coste_electronique/script.lua")}
 
 \frontmatter
-\pagestyle{fancy}
 \maketitle
 \tableofcontents
 
@@ -58,10 +57,12 @@
 \input{Glossaire/glossaire}
 
 % clés
-\input{Fiches/familles.cles}
+%\input{Fiches/familles.cles}
 
 \mainmatter
-\pagestyle{fancy}
+\pagestyle{scrheadings}
+
+\part{test}
 
 \input{Fiches/Araliaceae/Araliaceae.famille}
 \input{Fiches/Solanaceae/Solanaceae.famille}
@@ -85,6 +86,8 @@
 \immediate\closeout\compteurfile
 
 \backmatter
+
+\bookmarksetup{startatroot}
 
 %  Index
 \printindex[scientifique]
