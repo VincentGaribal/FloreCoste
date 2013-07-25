@@ -72,7 +72,7 @@
 % Incrémente le compteur de famille (donc remet à 0 les compteurs liés)
 \refstepcounter{NombreTotalFamilles}%
 \addpart[#1]{Famille des #1\label{#1}}%
-\markboth{\nomfamille}{}
+\markboth{\nomfamille}{\nomfamille}
 \begin{center}
 \textit{Cette famille comporte \GenreSP{NombreGenres\nomfamille Sauve} et \EspeceSP{NombreEspeces\nomfamille Sauve}.}
 \end{center}
@@ -126,16 +126,16 @@
 \setcounter{totalnumber}{5}
 
 % raccourcis pour les sous-section de chaque espece
-\newcommand{\biologie}{\normalfont\subsubsection*{Biologie}}
-\newcommand{\ecologie}{\subsubsection*{Écologie}}
-\newcommand{\biogeographie}{\subsubsection*{Biogéographie}}
+\newcommand{\biologie}{\normalfont\subsection*{Biologie}}
+\newcommand{\ecologie}{\subsection*{Écologie}}
+\newcommand{\biogeographie}{\subsection*{Biogéographie}}
 
 % raccourcis pour les nom des paragraphes
-\newcommand{\appveg}{\paragraph{Appareil végétatif.}}
-\newcommand{\inflo}{ \paragraph{Inflorescence.}}
-\newcommand{\fleur}{ \paragraph{Fleur.}}
-\newcommand{\fruit}{ \paragraph{Fruit.}}
-\newcommand{\graine}{ \paragraph{Graine.}}
+\newcommand{\appveg}{\paragraph[Appareil végétatif]{Appareil végétatif \subref{\nomgenre\nomespece veg}.}}
+\newcommand{\inflo}{\paragraph[Inflorescence]{Inflorescence \subref{\nomgenre\nomespece inflo}.}}
+\newcommand{\fleur}{\paragraph[Fleur]{Fleur \subref{\nomgenre\nomespece fleur}.}}
+\newcommand{\fruit}{\paragraph[Fruit]{Fruit \subref{\nomgenre\nomespece fruit}.}}
+\newcommand{\graine}{\paragraph{Graine.}}
 \newcommand{\calice}{\textbf{Calice.\ }}
 \newcommand{\corolle}{\textbf{Corolle.\ }}
 \newcommand{\androcee}{\textbf{Androcée.\ }}
@@ -272,16 +272,28 @@
 \end{multicols}
 \fi}
 
+\newcommand{\dummybox}{%
+\framebox[.49\linewidth]{\rule{0pt}{{.49\linewidth}*{4/3}}}
+}
+
 \newcommand{\icono}[8]{%
 \ifpapieraquatre
 \begin{figure*}
-\subfloat[#2]{\includegraphics[width=.49\linewidth]{#1}}
+\ifthenelse{\equal{#1}{}}
+  {\subfloat[Manquant\label{\nomgenre\nomespece veg}]{\dummybox}}
+  {\subfloat[#2\label{\nomgenre\nomespece veg}]{\includegraphics[width=.49\linewidth]{#1}}}
 \hfill
-\ifthenelse{\isempty{#3}}{\subfloat[Manquant]}{\subfloat[#4]{\framebox[150pt]{\rule{0pt}{100pt}}}}
+\ifthenelse{\equal{#3}{}}
+  {\subfloat[Manquant\label{\nomgenre\nomespece inflo}]{\dummybox}}
+  {\subfloat[#4\label{\nomgenre\nomespece inflo}]{\includegraphics[width=.49\linewidth]{#3}}}  
 
-\subfloat[#6]{\includegraphics[width=.49\linewidth]{#5}}
+\ifthenelse{\equal{#5}{}}
+  {\subfloat[Manquant\label{\nomgenre\nomespece fleur}]{\dummybox}}
+  {\subfloat[#6\label{\nomgenre\nomespece fleur}]{\includegraphics[width=.49\linewidth]{#5}}}
 \hfill
-\subfloat[#8]{\includegraphics[width=.49\linewidth]{#7}}
+\ifthenelse{\equal{#7}{}}
+  {\subfloat[Manquant\label{\nomgenre\nomespece fruit}]{\dummybox}}
+  {\subfloat[#8\label{\nomgenre\nomespece fruit}]{\includegraphics[width=.49\linewidth]{#7}}}  
 \end{figure*}
 \fi
 }
