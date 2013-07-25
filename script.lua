@@ -226,8 +226,9 @@ function barre (Famille, Genre, Espece, LargeurFonteSP, LargeurTexteSP, Facteur)
   else
     table.insert(Chaine,[[\draw[anchor=base,line width=2pt] (]]..Minimum..[[,0) -- (]]..Maximum..[[,0);]])
   end
-  table.insert(Chaine,[[\node[anchor=base west,inner sep=0sp] at (1,.2cm) {]]..MinRange..[[};]])
-  table.insert(Chaine,[[\node[anchor=base east,inner sep=0sp] at (]]..NombreEntreesTable..[[,.2cm) {]]..MaxRange..[[};]])
+  table.insert(Chaine,[[\node[anchor=base west,inner sep=0sp,font=\small\sffamily] at (1,.2cm) {]]..MinRange..[[};]])
+  table.insert(Chaine,[[\node[anchor=base east,inner sep=0sp,font=\small\sffamily] at (]]..NombreEntreesTable..[[,.2cm) {]]..MaxRange..[[};]])
+  table.insert(Chaine,[[\node[anchor=center,font=\bfseries\sffamily] at (]]..((NombreEntreesTable + 1) / 2)..[[,-0.8cm) {]]..Facteur..[[};]])
   table.insert(Chaine,[[\end{tikzpicture}]])
   tex.tprint(Chaine)
 end
