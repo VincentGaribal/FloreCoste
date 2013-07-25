@@ -19,16 +19,16 @@
 
 \ecologie
 
-\facteur{lumière}{lumiere}
-\facteur{humidité atmosphérique}{humiditeatmospherique}
-\facteur{température}{temperature}
-\facteur{continentalité}{continentalite}
-\facteur{pH}{pH}
-\facteur{humidité}{humidite}
-\facteur{texture}{texture}
-\facteur{nutriments}{nutriments}
-\facteur{salinité}{salinite}
-\facteur{matière organique}{matiereorganique}
+\facteur{lumiere}
+\facteur{humiditeatmospherique}
+\facteur{temperature}
+\facteur{continentalite}
+\facteur{pH}
+\facteur{humidite}
+\facteur{texture}
+\facteur{nutriments}
+\facteur{salinite}
+\facteur{matiereorganique}
 
 \end{descript}
 
