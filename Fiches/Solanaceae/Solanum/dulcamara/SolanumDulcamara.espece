@@ -1,34 +1,30 @@
 % !TEX root=../../../../flore.tex
 
 \espece{Solanum}{dulcamara}{L.}
-\vernaculaire{Solanaceae}{Solanum}{dulcamara}
+\vernaculaire{\nomfamille}{\nomgenre}{\nomespece}
 
 \begin{descript}
 
 \biologie
 
-\appveg \glossaire{Arbuste}{Arbuste} \glossaire{sarmenteux}{Sarmenteux} de \SIrange{1}{2}{\meter}, \glossaire{glabre}{Glabre} ou \glossaire{pubescent}{Pubescent}, à écorce amère et à bois sucré, à rameaux \glossaire{herbacés}{Herbacé}, un peu \glossaire{volubile}{Volubile}, cylindrique ; feuilles ovales-acuminées, souvent en cœur, entières ou les supérieures triséquées, les 2 segments latéraux plus petits ;
-
-\inflo Fleurs violettes, en cymes corymbiformes divariquées, multiflores, longuement pédonculées.
-
-\fleur Calice vert, petit, à lobes courts ; Corolle de \SIrange{12}{20}{\milli\meter}, à lobes réfléchis, marqués chacun vers la base de 2 taches vertes ; anthères jaunes.
-
-\fruit Baies ovoïdes, rouges.
-
+\appveg
+\inflo
+\fleur
+\fruit\par
 \noindent\includegraphics[width=\linewidth]{\nomgenre\nomespece Coste}
 
 \ecologie
 
-\facteur{lumiere}
-\facteur{humiditeatmospherique}
-\facteur{temperature}
-\facteur{continentalite}
-\facteur{pH}
-\facteur{humidite}
-\facteur{texture}
-\facteur{nutriments}
-\facteur{salinite}
-\facteur{matiereorganique}
+\lumiere
+\humiditeatmospherique
+\temperature
+\continentalite
+\pH
+\humidite
+\texture
+\nutriments
+\salinite
+\matiereorganique
 
 \end{descript}
 
