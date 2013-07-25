@@ -98,9 +98,7 @@
 \begin{center}
 \emph{Ce genre comporte \EspeceSP{NombreEspeces\nomgenre Sauve}.}
 \end{center}
-\refstepcounter{coupletdetermination}%
-%\end{center}%
-}
+\refstepcounter{coupletdetermination}}
 
 % Espèce
 % #1 : genre
@@ -113,10 +111,6 @@
 \refstepcounter{NombreEspecesGenre}
 \refstepcounter{NombreEspecesFamille}
 \addsec[#1 #2]{#1 #2~\botaniste{#3}\index[scientifique]{#1!#2@\emph{#2}}\label{#1#2}}\noindent\rule[2ex]{\linewidth}{.4pt}\normalsize\normalfont}
-%\phantomsection%
-%\addcontentsline{toc}{subsection}{#1 #2}%
-%} \\\rule[1ex]{\linewidth}{.4pt}\normalsize\normalfont}%
-
 
 % nom vernaculaire
 \newcommand{\vernaculaire}[3]{\luadirect{vernaculaire(\luastring{#1},\luastring{#2},\luastring{#3})}}
@@ -294,7 +288,9 @@
 \ifthenelse{\equal{#7}{}}
   {\subfloat[Manquant\label{\nomgenre\nomespece fruit}]{\dummybox}}
   {\subfloat[#8\label{\nomgenre\nomespece fruit}]{\includegraphics[width=.49\linewidth]{#7}}}
-\caption{\nomgenre\ \nomespece}
+\begin{center}
+\bfseries\nomgenre\ \nomespece
+\end{center}
 \end{figure*}
 \fi
 }
