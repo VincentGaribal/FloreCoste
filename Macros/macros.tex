@@ -110,7 +110,7 @@
 \refstepcounter{NombreTotalEspeces}%
 \refstepcounter{NombreEspecesGenre}
 \refstepcounter{NombreEspecesFamille}
-\addsec[#1 #2]{#1 #2~\botaniste{#3}\index[scientifique]{#1!#2@\emph{#2}}\label{#1#2}}\noindent\rule[2ex]{\linewidth}{.4pt}\normalsize\normalfont}
+\addsec[#1 #2]{\emph{#1 #2}~\botaniste{#3}\index[scientifique]{#1!#2@\emph{#2}}\label{#1#2}}\noindent\rule[2ex]{\linewidth}{.4pt}\normalsize\normalfont}
 
 % nom vernaculaire
 \newcommand{\vernaculaire}[3]{\luadirect{vernaculaire(\luastring{#1},\luastring{#2},\luastring{#3})}}
