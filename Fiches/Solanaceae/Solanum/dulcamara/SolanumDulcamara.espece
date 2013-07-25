@@ -11,9 +11,11 @@
 
 \inflo Fleurs violettes, en cymes corymbiformes divariquées, multiflores, longuement pédonculées.
 
-\fleur \calice Vert, petit, à lobes courts ; \corolle \SIrange{12}{20}{\milli\meter}, à lobes réfléchis, marqués chacun vers la base de 2 taches vertes ; anthères jaunes.
+\fleur Calice vert, petit, à lobes courts ; Corolle de \SIrange{12}{20}{\milli\meter}, à lobes réfléchis, marqués chacun vers la base de 2 taches vertes ; anthères jaunes.
 
 \fruit Baies ovoïdes, rouges.
+
+\noindent\includegraphics[width=\linewidth]{\nomgenre\nomespece Coste}
 
 \ecologie
 
@@ -30,12 +32,4 @@
 
 \end{descript}
 
-\begin{figure*}
-\subfloat[Vue générale]{\includegraphics[width=.49\linewidth]{test_icono}}
-\hfill
-\subfloat[Inflorescence]{\includegraphics[width=.49\linewidth]{test_icono}}
-
-\subfloat[Fleur]{\includegraphics[width=.49\linewidth]{test_icono}}
-\hfill
-\subfloat[Fruit]{\includegraphics[width=.49\linewidth]{test_icono}}
-\end{figure*}
+\icono{}{}{}{}{}{}{}{}
