@@ -127,7 +127,7 @@
 
 % raccourcis pour les sous-section de chaque espece
 \newcommand{\biologie}{\normalfont\subsection*{Biologie}}
-\newcommand{\ecologie}{\subsection*{Écologie}}
+\newcommand{\ecologie}{\subsection*{Écologie (optimum écologiques)}}
 \newcommand{\biogeographie}{\subsection*{Biogéographie}}
 
 % raccourcis pour les nom des paragraphes
@@ -293,7 +293,8 @@
 \hfill
 \ifthenelse{\equal{#7}{}}
   {\subfloat[Manquant\label{\nomgenre\nomespece fruit}]{\dummybox}}
-  {\subfloat[#8\label{\nomgenre\nomespece fruit}]{\includegraphics[width=.49\linewidth]{#7}}}  
+  {\subfloat[#8\label{\nomgenre\nomespece fruit}]{\includegraphics[width=.49\linewidth]{#7}}}
+\caption{\nomgenre\ \nomespece}
 \end{figure*}
 \fi
 }
