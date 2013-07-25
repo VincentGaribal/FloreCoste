@@ -50,11 +50,7 @@ twoside=false%
 \chead{}
 \lehead{}
 \rohead{}
-\cfoot{\ifthenelse{\equal{\leftmark}{\rightmark}}%
-    {\leftmark}%
-    {\hyperref[\nomfamille]{\leftmark}\ --- \hyperref[\nomgenre]{\rightmark}}}
-
-\renewcommand*\chapterpagestyle{scrheadings}
+\cfoot{\hyperref[\nomfamille]{\leftmark}}
 
 % Style xindy
 \usepackage{filecontents}
