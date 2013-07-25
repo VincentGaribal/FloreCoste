@@ -1,14 +1,12 @@
 % !TEX root = ../flore.tex
 
-\KOMAoptions{DIV=15,BCOR=0pt,twoside=false}
-
 % a4
 \ifpapieraquatre
 \KOMAoptions{%
 paper=a4,%
 DIV=15,%
-BCOR=0pt,%
-twoside=false,%
+%BCOR=0pt,%
+%twoside=false,%
 numbers=noendperiod%
 }
 \fi
@@ -46,26 +44,17 @@ twoside=false%
 
 % en-tête pied-de-page
 \usepackage[manualmark]{scrpage2}
-\setkomafont{pagefoot}{\normalfont\rmfamily\sffamily}
-\setkomafont{pagenumber}{\normalfont\rmfamily\sffamily}
-\rofoot{\small\sffamily\pagemark}
-\refoot{\small\sffamily\pagemark}
-\cfoot{}
+\setkomafont{pagefoot}{\normalfont\small\rmfamily\sffamily}
+\setkomafont{pagenumber}{\normalfont\small\rmfamily\sffamily}
+\ofoot{\pagemark}
 \chead{}
-
-\lofoot{\small%
-\ifthenelse{\equal{\rightmark}{}}%
-  {\leftmark}%
-  {\ifthenelse{\equal{\leftmark}{\rightmark}}%
+\lehead{}
+\rohead{}
+\cfoot{\ifthenelse{\equal{\leftmark}{\rightmark}}%
     {\leftmark}%
-    {\hyperref[\nomfamille]{\leftmark}\ --- \hyperref[\nomgenre]{\rightmark}}}}
+    {\hyperref[\nomfamille]{\leftmark}\ --- \hyperref[\nomgenre]{\rightmark}}}
 
-\lefoot{\small%
-\ifthenelse{\equal{\rightmark}{}}%
-  {\leftmark}%
-  {\ifthenelse{\equal{\leftmark}{\rightmark}}%
-    {\leftmark}%
-    {\hyperref[\nomfamille]{\leftmark}\ --- \hyperref[\nomgenre]{\rightmark}}}}
+\renewcommand*\chapterpagestyle{scrheadings}
 
 % Style xindy
 \usepackage{filecontents}
@@ -113,7 +102,6 @@ BoldItalicFeatures={SmallCapsFont={Optima nova LT Bold Italic Small Caps}}%
 % graphiques et dessins
 \usepackage{graphicx}
 \graphicspath{{Images/}}
-\usepackage{subfig}
 \usepackage{tikz}
 
 % index
@@ -134,6 +122,7 @@ BoldItalicFeatures={SmallCapsFont={Optima nova LT Bold Italic Small Caps}}%
 
 % légendes figures
 \usepackage{caption}
+\usepackage{subfig}
 
 % colonnes
 \usepackage{multicol}
