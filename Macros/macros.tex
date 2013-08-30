@@ -125,10 +125,22 @@
 \newcommand{\biogeographie}{\subsection*{Biogéographie}}
 
 % raccourcis pour les nom des paragraphes
-\newcommand{\appveg}{\paragraph[Appareil végétatif]{Appareil végétatif \subref{\nomgenre\nomespece veg}.}}
-\newcommand{\inflo}{\paragraph[Inflorescence]{Inflorescence \subref{\nomgenre\nomespece inflo}.}}
-\newcommand{\fleur}{\paragraph[Fleur]{Fleur \subref{\nomgenre\nomespece fleur}.}}
-\newcommand{\fruit}{\paragraph[Fruit]{Fruit \subref{\nomgenre\nomespece fruit}.}}
+\newcommand{\appveg}{%
+\paragraph[Appareil végétatif]{Appareil végétatif \subref{\nomgenre\nomespece veg}.}
+\luadirect{tex.print(Flore[\luastring{\nomfamille}][\luastring{\nomgenre}][\luastring{\nomespece}]["Biologie"]["Appareil végétatif"])}%
+}
+\newcommand{\inflo}{%
+\paragraph[Inflorescence]{Inflorescence \subref{\nomgenre\nomespece inflo}.}
+\luadirect{tex.print(Flore[\luastring{\nomfamille}][\luastring{\nomgenre}][\luastring{\nomespece}]["Biologie"]["Inflorescence"])}%
+}
+\newcommand{\fleur}{%
+\paragraph[Fleur]{Fleur \subref{\nomgenre\nomespece fleur}.}
+\luadirect{tex.print(Flore[\luastring{\nomfamille}][\luastring{\nomgenre}][\luastring{\nomespece}]["Biologie"]["Fleur"])}%
+}
+\newcommand{\fruit}{%
+\paragraph[Fruit]{Fruit \subref{\nomgenre\nomespece fruit}.}
+\luadirect{tex.print(Flore[\luastring{\nomfamille}][\luastring{\nomgenre}][\luastring{\nomespece}]["Biologie"]["Fruit"])}%
+}
 \newcommand{\graine}{\paragraph{Graine.}}
 \newcommand{\calice}{\textbf{Calice.\ }}
 \newcommand{\corolle}{\textbf{Corolle.\ }}
@@ -227,10 +239,7 @@
 
 % entrée des noms des botanistes
 % #1 : nom abrégé
-% #2 : nom complet
-\newcommand{\entreebotaniste}[2]{%
-\item[#1]#2.%
-\luadirect{botaniste(\luastringN{#1},\luastringN{#2})}}
+\newcommand{\entreebotaniste}[1]{\item[#1]\luadirect{tex.print(Botaniste[\luastringN{#1}])}.}
 
 % affichage du nom complet du botaniste dans une bulle
 \newcommand{\botaniste}[1]{%
@@ -297,132 +306,82 @@
 
 % écologie
 
-\newcommand{\facteur}[1]{%
-\begin{center}
-\csname #1\endcsname
-\end{center}}
-
-% compteur et longueur
-\newcount\moncompteurlargeur
-\newcount\moncompteurfonte
-\newlength\taillefonte
-
 \newcommand{\lumiere}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Lumière")}}
+"Lumière")}\par}
 
 \newcommand{\humiditeatmospherique}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Humidité atmosphérique")}}
+"Humidité atmosphérique")}\par}
 
 \newcommand{\temperature}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Température")}}
+"Température")}\par}
 
 \newcommand{\continentalite}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Continentalité")}}
+"Continentalité")}\par}
 
 \newcommand{\pH}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"pH")}}
+"pH")}\par}
 
 \newcommand{\humidite}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Humidité")}}
+"Humidité")}\par}
 
 \newcommand{\texture}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Texture")}}
+"Texture")}\par}
 
 \newcommand{\nutriments}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Nutriments")}}
+"Nutriments")}\par}
 
 \newcommand{\salinite}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Salinité")}}
+"Salinité")}\par}
 
 \newcommand{\matiereorganique}{%
-\setlength\taillefonte{\fontdimen6\font}% taille de la fonte courante
-\moncompteurfonte=\taillefonte\relax
-\moncompteurlargeur=\columnwidth\relax
+\dimen0=\columnwidth\relax
 \luadirect{barre(
 \luastring{\nomfamille},
 \luastring{\nomgenre},
 \luastring{\nomespece},
-\luastring{\the\moncompteurfonte},
-\luastring{\the\moncompteurlargeur},
-"Matière organique")}}
+"Matière organique")}\par}
