@@ -50,6 +50,12 @@ Flore = {
           [10] = "Bronde",
           [11] = "Bois de ru"
         },
+        ["Biologie"] = {
+          ["Appareil végétatif"] = [[\glossaire{Arbuste}{Arbuste} \glossaire{sarmenteux}{Sarmenteux} de \SIrange{1}{2}{\meter}, \glossaire{glabre}{Glabre} ou \glossaire{pubescent}{Pubescent}, à écorce amère et à bois sucré, à rameaux \glossaire{herbacés}{Herbacé}, un peu \glossaire{volubile}{Volubile}, cylindrique ; feuilles ovales-acuminées, souvent en cœur, entières ou les supérieures triséquées, les 2 segments latéraux plus petits.]],
+          ["Inflorescence"] = [[Fleurs violettes, en cymes corymbiformes divariquées, multiflores, longuement pédonculées.]],
+          ["Fleur"] = [[Calice vert, petit, à lobes courts ; Corolle de \SIrange{12}{20}{\milli\meter}, à lobes réfléchis, marqués chacun vers la base de 2 taches vertes ; anthères jaunes.]],
+          ["Fruit"] = [[Baies ovoïdes, rouges.]]
+        },
         ["Écologie"] = {
           ["Lumière"] = {
             ["Min"] = 6,
