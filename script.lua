@@ -183,13 +183,16 @@ function definitionglossaire (Terme)
   end
 end
 
-function botaniste(Abreviation,Nom)
-  if type(Botaniste) == "table" then
-    Botaniste[Abreviation] = Nom
-  else 
-    Botaniste = {}
-    Botaniste[Abreviation] = Nom
+function listelettrebotaniste (Lettre)
+  local Chaine = {}
+  table.insert(Chaine,[[\begin{description}]])
+  for i,v in ipairs(Botaniste) do
+    if Botaniste[i]["Lettre"] == Lettre then
+      table.insert(Chaine,[[\item[]]..Botaniste[i]["Abréviation"].."]"..Botaniste[i]["Nom"])
+    end
   end
+  table.insert(Chaine,[[\end{description}]])
+  tex.tprint(Chaine)
 end
 
 function nomcompletbotaniste (Abreviation)
@@ -205,17 +208,17 @@ function round(num, idp)
   return math.floor(num * mult + 0.5) / mult
 end
 
-function barre (Famille, Genre, Espece, LargeurFonteSP, LargeurTexteSP, Facteur)
+function barre (Famille, Genre, Espece, Facteur)
   local NombreEntreesTable = nombreentreetable(FacteursEcologiques[Facteur])
   local Minimum = Flore[Famille][Genre][Espece]["Écologie"][Facteur]["Min"]
   local Maximum = Flore[Famille][Genre][Espece]["Écologie"][Facteur]["Max"]
   local MinRange = TitreFacteurs[Facteur]["Min"]
   local MaxRange = TitreFacteurs[Facteur]["Max"]
-  local UniteSP = math.floor(LargeurTexteSP / NombreEntreesTable)
+  local UnitePT = round((((tex.dimen[0] - (14 * 65536)) / (NombreEntreesTable - 1)) / 65536),4)
   local Chaine = {}
   table.insert(Chaine,[[\noindent]])
-  table.insert(Chaine,[[\begin{tikzpicture}[x=]]..UniteSP.."sp]")
-  table.insert(Chaine,[[\draw (1,0) -- (]]..NombreEntreesTable..[[*]]..UniteSP..[[sp,0);]])
+  table.insert(Chaine,[[\begin{tikzpicture}[x=]]..UnitePT.."pt]")
+  table.insert(Chaine,[[\draw (1,0) -- (]]..NombreEntreesTable..[[,0);]])
   table.insert(Chaine,[[\foreach \x/\nom in {]])
   for i=1,NombreEntreesTable do
     table.insert(Chaine,i..[[/{]]..FacteursEcologiques[Facteur][i].."},")
